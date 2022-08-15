@@ -1,0 +1,43 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "scripts": {
+    "build": "remix build",
+    "dev": "remix dev",
+    "start": "remix-serve build"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.10.0",
+    "@emotion/styled": "^11.10.0",
+    "@mui/material": "^5.10.0",
+    "@react-pdf-viewer/core": "^3.6.0",
+    "@remix-run/node": "^1.6.7",
+    "@remix-run/react": "^1.6.7",
+    "@remix-run/serve": "^1.6.7",
+    "howler": "^2.2.3",
+    "pdfjs-dist": "^2.14.305",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-modal": "^3.15.1",
+    "react-pdf": "^5.7.2",
+    "react-player": "^2.10.1",
+    "styled-component": "^2.8.0",
+    "styled-components": "^5.3.5",
+    "use-sound": "^4.0.1"
+  },
+  "devDependencies": {
+    "@remix-run/dev": "^1.6.7",
+    "@remix-run/eslint-config": "^1.6.7",
+    "@types/howler": "^2.2.7",
+    "@types/react": "^17.0.47",
+    "@types/react-dom": "^17.0.17",
+    "@types/react-modal": "^3.13.1",
+    "@types/react-pdf": "^5.7.2",
+    "@types/styled-components": "^5.1.25",
+    "eslint": "^8.20.0",
+    "typescript": "^4.7.4"
+  },
+  "engines": {
+    "node": ">=14"
+  }
+}

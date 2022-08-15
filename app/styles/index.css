@@ -1,0 +1,746 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Patrick+Hand&family=Pacifico&family=Uchen&family=Amatic+SC:wght@400&display=swap");
+
+.container {
+    display: flex;
+    flex-direction: column;
+    transition: ease all 0.15s;
+    gap: 50px;
+    overflow: hidden;
+}
+.container > section {
+    height: 100vh;
+    max-width: 100%;
+    position: relative;
+}
+#down-arrow {
+    background: transparent;
+    border: transparent;
+    position: absolute;
+    bottom: 1%;
+    animation: MoveUpDown 2s ease infinite;
+    cursor: pointer;
+    z-index: 1;
+}
+#up-arrow {
+    background: transparent;
+    border: transparent;
+    position: absolute;
+    top: 2%;
+    animation: MoveUpDown 2s ease infinite;
+    cursor: pointer;
+    z-index: 1;
+}
+#up-arrow > img {
+    transform: rotateZ(180deg);
+}
+
+/* welcome section */
+.intro {
+    max-width: 100vw;
+    display: flex;
+    justify-content: center;
+    height: calc(100vh - 50px) !important;
+}
+.intro #down-arrow {
+    bottom: 0px;
+}
+.left {
+    width: 40%;
+    max-width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.left > img {
+    height: 75%;
+    box-shadow: 2px 2px rgb(135, 135, 135);
+    border: 4px solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(-45deg, #743ad5, #d53a9d);
+}
+.right {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    cursor: default;
+    height: 100%;
+}
+.text-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 4vh;
+}
+h1 {
+    font-size: 110px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    font-family: "Pacifico", cursive;
+    width: 50vw;
+}
+h2 {
+    position: relative;
+    text-align: center;
+    font-size: 88px;
+    display: flex;
+    font-family: "Dancing Script", cursive;
+    justify-content: center;
+    align-items: center;
+    width: 50vw;
+    background: linear-gradient(
+        -45deg,
+        #fc1a1a,
+        #ee7752,
+        #d92ebd,
+        #1224e7,
+        #23d5ab,
+        #6e34d3,
+        #fc1a1a
+    );
+    background-clip: text;
+    color: transparent;
+    background-clip: text;
+    background-size: 150% 150%;
+    animation: textGradient 8s ease infinite;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+h4 {
+    position: relative;
+    text-align: center;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 22px;
+}
+@keyframes textGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+.right > h4 {
+    text-align: center;
+    font-size: 24px;
+    font-family: "Uchen", serif;
+}
+.social {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 33vw;
+    max-width: 420px;
+}
+
+.social a:hover {
+    transform: scale(1.2);
+    transition: all 0.5s;
+}
+
+@keyframes MoveUpDown {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* details about me section */
+#about-me {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 100vw;
+    height: auto;
+    margin: 50px 0;
+}
+#about-me > h3 {
+    margin-top: 30px;
+}
+#about-me > #down-arrow {
+    bottom: -50px;
+}
+.details-wrapper {
+    width: 85vw;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+.details-wrapper > .border-effect {
+    font-size: 28px;
+    color: rgb(31, 31, 31);
+    border-collapse: collapse;
+}
+.details-wrapper table {
+    border: 3px solid #737373;
+    border-radius: 20px;
+    padding: 30px;
+    background-color: #f8e0bb;
+}
+td {
+    border: 1px solid #6e6e6e;
+    padding: 10px 15px;
+    font-family: "Patrick Hand", cursive;
+}
+
+/* my techstack section */
+.icon {
+    max-height: 80px;
+}
+.my-techstack {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 100vw;
+    gap: 20px;
+    padding: 0 10px;
+    height: 100vh;
+    overflow: hidden;
+}
+.techstack {
+    display: flex;
+    gap: 50px;
+    padding: 30px 0;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 85vw;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    overflow-y: visible;
+    background: white;
+    scrollbar-width: thin;
+}
+.techstack::-webkit-scrollbar {
+    display: none;
+}
+.techstack:hover::-webkit-scrollbar {
+    background-color: rgba(253, 215, 158, 0.683);
+    border-radius: 10px;
+    height: 10px;
+}
+.techstack::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #979797ad;
+}
+.techstack img {
+    border-radius: 10px;
+    padding: 0;
+}
+.techstack > a {
+    padding: 10px 10px;
+}
+.techstack > a:hover {
+    flex: 1 1 auto;
+    padding: 10px 40px;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    text-align: center;
+    transition: all 0.8s;
+}
+h3 {
+    font-size: 64px;
+    padding: 30px;
+    display: flex;
+    font-family: "Dancing Script", cursive;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(-45deg, #19dcdc, #5322c6, #d53a9d);
+    background-clip: text;
+    color: transparent;
+    background-clip: text;
+    background-size: 150% 150%;
+    animation: textGradient 5s ease infinite;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+h3:hover {
+    transform: scale(1.1);
+    transition: all 0.7s;
+    cursor: default;
+}
+#techstack-revisit {
+    margin: 50px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 100vw;
+    height: 100vh;
+    gap: 20px;
+    padding: 0 10px;
+}
+#techstack-revisit h3,
+#final h3 {
+    font-family: "Amatic SC", cursive;
+    font-size: 48px;
+    gap: 20px;
+}
+.techstack-scrolled h3 {
+    color: transparent;
+}
+.techstack-not-scrolled h3 {
+    color: rgb(74, 74, 74);
+}
+.techstack-not-scrolled h3:hover {
+    transform: none;
+    background: linear-gradient(-45deg, #19dcdc, #5322c6, #d53a9d);
+    background-clip: text;
+    color: transparent;
+    background-clip: text;
+    background-size: 150% 150%;
+    animation: textGradient 5s ease infinite;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+#fake-final {
+    gap: 0;
+}
+#fake-final h3:hover {
+    transform: none;
+}
+#fake-final a {
+    text-decoration: none;
+    background: linear-gradient(-45deg, #19dcdc, #5322c6, #d53a9d);
+    background-clip: text;
+    color: transparent;
+    background-clip: text;
+    background-size: 150% 150%;
+    -webkit-background-clip: text;
+    color: transparent;
+    padding: 0 18px;
+    border-radius: 10px;
+    border: 2px dashed rgb(125, 125, 125);
+}
+#fake-final a:hover {
+    transform: unset;
+    z-index: 2;
+    color: rgb(255, 255, 255);
+    background: rgba(120, 120, 120, 0.543);
+}
+#fake-final div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+    text-align: center;
+    overflow: visible;
+}
+#fake-final h3 {
+    font-size: 4vw;
+    padding: 10px;
+    flex-direction: column;
+}
+#fake-final h2 {
+    font-size: 64px;
+    padding: 10px;
+    width: auto;
+}
+.to-repo {
+    transition: all 0.5s ease;
+    transform: translateY(-30px);
+}
+.to-repo:hover {
+    z-index: 2;
+}
+.final {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 100vw;
+    gap: 20px;
+    padding: 0 10px;
+    height: 100vh;
+}
+.final h3 {
+    color: rgb(74, 74, 74);
+    font-family: "Amatic SC", cursive;
+}
+.final h3:hover {
+    transform: none;
+}
+
+@media only screen and (max-width: 1200px) {
+    .intro > .left img {
+        height: 40vw;
+    }
+    .container {
+        gap: 50px;
+    }
+    .to-repo {
+        transform: translateY(-10px);
+    }
+}
+
+@media only screen and (max-width: 960px) {
+    .intro {
+        height: 100vh !important;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        top: auto;
+        margin-top: 50px;
+    }
+    .left,
+    .right {
+        height: auto;
+        padding: 20px;
+        padding-bottom: 0;
+        width: 100vw;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .intro > .left img {
+        height: 300px;
+    }
+    .intro #down-arrow {
+        display: none;
+    }
+    h1 {
+        font-size: 72px;
+    }
+    h2 {
+        font-size: 64px;
+    }
+    .social {
+        width: 60vw;
+    }
+    #fake-final h2 {
+        font-size: 48px;
+        padding: 10px;
+        width: auto;
+    }
+    .final {
+        padding: 0;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #fake-final,
+    #final {
+        padding-top: 20px;
+    }
+    #fake-final div {
+        display: flex;
+        width: 80vw;
+        margin: 10px 0;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        vertical-align: middle;
+        text-align: center;
+        overflow: visible;
+        font-size: 36px;
+    }
+    #fake-final h3 {
+        font-size: 26px;
+        padding: 10px;
+        display: block;
+    }
+    #fake-final h2 {
+        font-size: 34px;
+        padding: 10px;
+        display: block;
+    }
+    #fake-final #down-arrow {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    .container {
+        gap: 30px;
+    }
+    .container > section:not(.intro) {
+        height: auto !important;
+    }
+    #down-arrow,
+    #up-arrow {
+        display: none !important;
+    }
+    .intro > .left img {
+        height: 200px;
+    }
+    .text-wrapper > * {
+        font-size: 40px;
+    }
+    .text-wrapper > h4 {
+        font-size: 16px;
+    }
+    .details-wrapper table {
+        padding: 15px;
+    }
+    .details-wrapper > .border-effect {
+        font-size: 18px;
+    }
+    td {
+        padding: 5px;
+    }
+    h3 {
+        padding: 15px;
+        font-size: 40px;
+        display: block;
+    }
+    .techstack {
+        border: 1px solid #6e6e6e;
+        border-radius: 10px;
+    }
+    .techstack.techstack::-webkit-scrollbar {
+        all: unset;
+    }
+    #techstack-revisit {
+        display: none;
+    }
+    #fake-final {
+        margin-top: 50px;
+    }
+    #fake-final h2 {
+        font-size: 36px;
+    }
+    #final h3 {
+        font-size: 30px;
+    }
+}
+
+/* firework effect */
+@keyframes firework {
+    0% {
+        transform: translate(var(--x), var(--initialY));
+        width: var(--initialSize);
+        opacity: 1;
+    }
+    50% {
+        width: 0.5vmin;
+        opacity: 1;
+    }
+    100% {
+        width: var(--finalSize);
+        opacity: 0.05;
+    }
+}
+
+.firework,
+.firework::before,
+.firework::after {
+    --initialSize: 0.7vmin;
+    --finalSize: 45vmin;
+    --particleSize: 0.3vmin;
+    --color1: yellow;
+    --color2: khaki;
+    --color3: white;
+    --color4: lime;
+    --color5: gold;
+    --color6: mediumseagreen;
+    --y: -30vmin;
+    --x: -50%;
+    --initialY: 60vmin;
+    content: "";
+    animation: firework 2s infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, var(--y));
+    width: var(--initialSize);
+    aspect-ratio: 1;
+    background: radial-gradient(
+                circle,
+                var(--color1) var(--particleSize),
+                #0000 0
+            )
+            50% 0%,
+        radial-gradient(circle, var(--color2) var(--particleSize), #0000 0) 100%
+            50%,
+        radial-gradient(circle, var(--color3) var(--particleSize), #0000 0) 50%
+            100%,
+        radial-gradient(circle, var(--color4) var(--particleSize), #0000 0) 0%
+            50%,
+        /* bottom right */
+            radial-gradient(circle, var(--color5) var(--particleSize), #0000 0)
+            80% 90%,
+        radial-gradient(circle, var(--color6) var(--particleSize), #0000 0) 95%
+            90%,
+        radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 90%
+            70%,
+        radial-gradient(circle, var(--color2) var(--particleSize), #0000 0) 100%
+            60%,
+        radial-gradient(circle, var(--color3) var(--particleSize), #0000 0) 55%
+            80%,
+        radial-gradient(circle, var(--color4) var(--particleSize), #0000 0) 70%
+            77%,
+        /* bottom left */
+            radial-gradient(circle, var(--color5) var(--particleSize), #0000 0)
+            22% 90%,
+        radial-gradient(circle, var(--color6) var(--particleSize), #0000 0) 45%
+            90%,
+        radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 33%
+            70%,
+        radial-gradient(circle, var(--color2) var(--particleSize), #0000 0) 10%
+            60%,
+        radial-gradient(circle, var(--color3) var(--particleSize), #0000 0) 31%
+            80%,
+        radial-gradient(circle, var(--color4) var(--particleSize), #0000 0) 28%
+            77%,
+        radial-gradient(circle, var(--color5) var(--particleSize), #0000 0) 13%
+            72%,
+        /* top left */
+            radial-gradient(circle, var(--color6) var(--particleSize), #0000 0)
+            80% 10%,
+        radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 95%
+            14%,
+        radial-gradient(circle, var(--color2) var(--particleSize), #0000 0) 90%
+            23%,
+        radial-gradient(circle, var(--color3) var(--particleSize), #0000 0) 100%
+            43%,
+        radial-gradient(circle, var(--color4) var(--particleSize), #0000 0) 85%
+            27%,
+        radial-gradient(circle, var(--color5) var(--particleSize), #0000 0) 77%
+            37%,
+        radial-gradient(circle, var(--color6) var(--particleSize), #0000 0) 60%
+            7%,
+        /* top right */
+            radial-gradient(circle, var(--color1) var(--particleSize), #0000 0)
+            22% 14%,
+        radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 45%
+            20%,
+        radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 33%
+            34%,
+        radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 10%
+            29%,
+        radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 31%
+            37%,
+        radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 28%
+            7%,
+        radial-gradient(circle, var(--color1) var(--particleSize), #0000 0) 13%
+            42%;
+    background-size: var(--initialSize) var(--initialSize);
+    background-repeat: no-repeat;
+}
+
+.firework::before {
+    --x: -50%;
+    --y: -50%;
+    --initialY: -50%;
+    transform: translate(-50%, -50%) rotate(40deg) scale(1.3) rotateY(40deg);
+}
+
+.firework::after {
+    --x: -50%;
+    --y: -50%;
+    --initialY: -50%;
+
+    transform: translate(-50%, -50%) rotate(170deg) scale(1.15) rotateY(-30deg);
+}
+
+.firework:nth-child(2) {
+    --x: 30vmin;
+}
+
+.firework:nth-child(2),
+.firework:nth-child(2)::before,
+.firework:nth-child(2)::after {
+    --color1: pink;
+    --color2: violet;
+    --color3: fuchsia;
+    --color4: orchid;
+    --color5: plum;
+    --color6: lavender;
+    --finalSize: 40vmin;
+    left: 30%;
+    top: 60%;
+    animation-delay: -0.25s;
+}
+
+.firework:nth-child(3) {
+    --x: -30vmin;
+    --y: -20vmin;
+}
+
+.firework:nth-child(3),
+.firework:nth-child(3)::before,
+.firework:nth-child(3)::after {
+    --color1: cyan;
+    --color2: lightcyan;
+    --color3: lightblue;
+    --color4: PaleTurquoise;
+    --color5: SkyBlue;
+    --color6: lavender;
+    --finalSize: 35vmin;
+    left: 70%;
+    top: 60%;
+    animation-delay: -0.4s;
+}
+
+.firework:nth-child(4) {
+    --x: 25vmin;
+}
+
+.firework:nth-child(4),
+.firework:nth-child(4)::before,
+.firework:nth-child(4)::after {
+    --color1: rgb(250, 48, 82);
+    --color2: rgb(235, 44, 101);
+    --color3: rgb(249, 30, 99);
+    --color4: rgb(234, 41, 157);
+    --color5: rgb(224, 108, 154);
+    --color6: lavender;
+    --finalSize: 40vmin;
+    left: 38%;
+    top: 40%;
+    animation-delay: -0.25s;
+}
+
+.firework:nth-child(5) {
+    --x: 60vmin;
+    --y: -40vmin;
+}
+
+.firework:nth-child(5),
+.firework:nth-child(5)::before,
+.firework:nth-child(5)::after {
+    --color1: rgb(252, 255, 160);
+    --color2: rgb(253, 246, 112);
+    --color3: rgb(255, 236, 65);
+    --color4: rgb(246, 241, 154);
+    --color5: rgb(255, 254, 220);
+    --color6: lavender;
+    --finalSize: 40vmin;
+    left: 30%;
+    top: 60%;
+    animation-delay: -0.25s;
+}
+
+.firework:nth-child(6) {
+    --x: -30vmin;
+    --y: -20vmin;
+}
+
+.firework:nth-child(6),
+.firework:nth-child(6)::before,
+.firework:nth-child(6)::after {
+    --color1: rgb(150, 253, 233);
+    --color2: rgb(120, 217, 217);
+    --color3: rgb(36, 192, 244);
+    --color4: rgb(27, 135, 217);
+    --color5: rgb(57, 171, 216);
+    --color6: lavender;
+    --finalSize: 35vmin;
+    left: 75%;
+    top: 40%;
+    animation-delay: -0.4s;
+}
