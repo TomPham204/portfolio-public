@@ -1,4 +1,4 @@
-# Welcome to Remix!
+# This is a public ver of my private portfolio repo. Personal images/sound resources are not included. All code files stay the same.
 
 - [Remix Docs](https://remix.run/docs)
 
