@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Link } from "@remix-run/react";
 
 import styles from "app/styles/resume.css";
@@ -13,7 +13,7 @@ export function links() {
 }
 
 export default function Index() {
-    const [isShow, setIsShow] = useState(false);
+    const [isShow, setIsShow] = useState(true);
     const [imgSrc, setImgSrc] = useState(cvlow || cv);
 
     useEffect(() => {
@@ -30,20 +30,18 @@ export default function Index() {
     }, []);
 
     const handleScroll = useCallback(() => {
-        setIsShow(window.pageYOffset > 60);
+        setIsShow(window.pageYOffset > 30);
     }, []);
 
     return (
         <>
             <span className="wrapper">
                 <div className="special">
-                    {!isShow && (
-                        <img
-                            className="arrow"
-                            src={arrow}
-                            alt="arrow to homepage"
-                        />
-                    )}
+                    <img
+                        className="arrow"
+                        src={arrow}
+                        alt="arrow to homepage"
+                    />
                     <h3>
                         <a
                             className="to-drive"
@@ -64,8 +62,8 @@ export default function Index() {
                         alt="My CV"
                         width="80vw"
                     />
+                    {isShow && <SocialLinks />}
                 </div>
-                {isShow && <SocialLinks />}
             </span>
         </>
     );

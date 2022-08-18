@@ -9,10 +9,10 @@ import musicNote from "app/components/story/music-note.png";
 import musicMute from "app/components/story/music-mute.png";
 import arrow from "app/components/arrow.png";
 import music1 from "app/components/story/beginning.mp3";
-import music2 from "app/components/story/realization.mp3";
 import SocialLinks from "app/components/socialLinks";
 import downArrow from "app/components/story/down-arrow.png";
-import blank from "app/components/story/blank.png";
+import clickMe from "app/components/story/clickme.png";
+
 import story1 from "app/components/story/story1.png";
 import story2 from "app/components/story/story2.png";
 import story3 from "app/components/story/story3.png";
@@ -24,6 +24,8 @@ import story8 from "app/components/story/story8.png";
 import story9 from "app/components/story/story9.png";
 import story10 from "app/components/story/story10.png";
 import story11 from "app/components/story/story11.png";
+import story11crush from "app/components/story/story11-crush.png";
+import story11heart from "app/components/story/story11-heart.png";
 import story12 from "app/components/story/story12.png";
 import story13 from "app/components/story/story13.png";
 
@@ -35,7 +37,10 @@ export default function Index() {
     const [defaultBGM] = useState(music1);
     const [isMute, setIsMute] = useState(false);
     const [initialPlay, setInitialPlay] = useState(true);
-    const [showArrow, setShowArrow] = useState(false);
+    const [showArrow, setShowArrow] = useState(true);
+    const [showClickme, setShowClickme] = useState(true);
+    const [showCrush, setShowCrush] = useState(false);
+    const [count, setCount] = useState(0);
     const [currentSong, setCurrentSong] = useState(music1);
     const [currentContent, setCurrentContent] = useState(0);
     const [play, { stop, sound }] = useSound(currentSong || defaultBGM, {
@@ -50,11 +55,20 @@ export default function Index() {
 
     useEffect(() => {
         window.addEventListener("scroll", handleScroll);
-        setTimeout(() => setShowArrow(true), 1000);
         return () => {
             window.removeEventListener("scroll", handleScroll);
         };
     }, []);
+
+    useEffect(() => {
+        count === 3 && setShowCrush(true);
+    }, [count]);
+
+    useEffect(() => {
+        setTimeout(() => {
+            setShowClickme(false);
+        }, 2000);
+    }, [showClickme]);
 
     const startStory = () => {
         const beginning = document.getElementById("beginning");
@@ -63,8 +77,10 @@ export default function Index() {
                 behavior: "smooth",
             });
         setShowArrow(false);
+        setShowClickme(true);
         !isMute && initialPlay && play();
     };
+
     const toNextId = (id = currentContent) => {
         const newContent = document.getElementById(
             ids[id < ids.length ? id + 1 : currentContent]
@@ -75,6 +91,7 @@ export default function Index() {
             });
         setCurrentContent(currentContent + 1);
     };
+
     const changeSong = (song: string) => {
         sound.fade(1, 0, 300);
         setTimeout(() => {
@@ -82,6 +99,7 @@ export default function Index() {
         }, 500);
         sound.fade(0, 1, 300);
     };
+
     const handleScroll = () => {
         setShowArrow(false);
     };
@@ -106,12 +124,6 @@ export default function Index() {
                         />
                     )}
                 </button>
-                <h1>BGM is on by default.</h1>
-                <h1>You can turn it off here.</h1>
-                <h6>
-                    * If the arrow position looks strange, please refresh the
-                    page.
-                </h6>
                 {showArrow && (
                     <img
                         id="arrow"
@@ -119,7 +131,13 @@ export default function Index() {
                         alt="arrow pointing to mute button"
                     />
                 )}
-                <button onClick={startStory}>Start</button>
+                <span className="text-wrapper">
+                    <h1>BGM is on by default.</h1>
+                    <h1>Click the music note to mute it.</h1>
+                </span>
+                <button id="start" onClick={startStory}>
+                    Start
+                </button>
             </div>
             <div id="beginning">
                 <h1>The beginning</h1>
@@ -130,6 +148,13 @@ export default function Index() {
                         width="40"
                     />
                 </button>
+                {showClickme && (
+                    <img
+                        id="clickme"
+                        src={clickMe}
+                        alt="hint to click at arrow down button"
+                    />
+                )}
             </div>
             <div id="beginning-content-1">
                 <span>
@@ -225,6 +250,7 @@ export default function Index() {
             </div>
             <div id="and-content-2">
                 <span className="center">
+                    <p>Art + Technology = ???</p>
                     <p>Maybe, a beautiful product like this page?</p>
                 </span>
                 <button id="down-arrow" onClick={() => toNextId(7)}>
@@ -268,7 +294,7 @@ export default function Index() {
             <div id="after-that-content-2">
                 <span className="center">
                     <p>Ok, IT sounds good enough.</p>
-                    <p>Also, forgot to mention...</p>
+                    <p>By the way...</p>
                 </span>
                 <button id="down-arrow" onClick={() => toNextId(10)}>
                     <img
@@ -282,7 +308,7 @@ export default function Index() {
                 <span>
                     <img src={story6} alt="story images" />
                     <span className="to-right">
-                        <p>Since high school till now,</p>
+                        <p>...since high school till now,</p>
                         <p>I've worked on many personal projects.</p>
                         <p>Mostly with Photoshop, Premiere</p>
                         <p>and Corel VideoStudio.</p>
@@ -315,8 +341,8 @@ export default function Index() {
                 </button>
             </div>
             <div id="ending">
-                <h1>The end?</h1>
-                <h1 id="nope">Not yet.</h1>
+                <h1>Starting to feel a bit boring? </h1>
+                <h1 id="nope">Almost at the end? Not yet.</h1>
                 <button id="down-arrow" onClick={() => toNextId(13)}>
                     <img
                         src={downArrow}
@@ -430,7 +456,18 @@ export default function Index() {
             </div>
             <div id="new-journey-content-2">
                 <span>
-                    <img src={story11} alt="story images" />
+                    <span className="crush">
+                        {showCrush ? (
+                            <img src={story11crush} alt="story images" />
+                        ) : (
+                            <img src={story11} alt="story images" />
+                        )}
+                        {!showCrush && (
+                            <button onClick={() => setCount(count + 1)}>
+                                <img src={story11heart} alt="heart icon" />
+                            </button>
+                        )}
+                    </span>
                     <span className="to-right">
                         <p>...my crush</p>
                     </span>

@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import { Link } from "@remix-run/react";
+import { HideDuring } from "react-hide-on-scroll";
 
 import styles from "app/styles/index.css";
-import type { Details } from "app/components/home/personalDetails";
 
+import PersonalDetails from "~/components/home/personalDetails";
 import avatar from "~/components/home/Tuan.jpeg";
 import nextjs from "~/components/home/nextjs.png";
 import storybook from "app/components/home/storybook.png";
@@ -13,8 +14,8 @@ import css from "~/components/home/css.png";
 import remix from "~/components/home/remix-run.png";
 import reactQuery from "~/components/home/react-query.png";
 import SocialLinks from "~/components/socialLinks";
-import PersonalDetails from "~/components/home/personalDetails";
 import downArrow from "app/components/story/down-arrow.png";
+import clickMe from "app/components/story/clickme.png";
 
 export function links() {
     return [{ rel: "stylesheet", href: styles }];
@@ -22,6 +23,7 @@ export function links() {
 
 export default function Index() {
     const [techstackScrolled, setTechStackScrolled] = useState(false);
+    const [showClickme, setShowClickme] = useState(true);
 
     const toNextId = (id: string) => {
         const newContent = document.getElementById(id);
@@ -32,7 +34,7 @@ export default function Index() {
     };
 
     useEffect(() => {
-        const scrollContainer = document.querySelector(".techstack");
+        const scrollContainer = document.querySelector("#techstack");
         scrollContainer !== null &&
             scrollContainer.addEventListener("wheel", (e: any) => {
                 e.preventDefault();
@@ -57,11 +59,15 @@ export default function Index() {
         );
     }, []);
 
+    setTimeout(() => {
+        setShowClickme(false);
+    }, 1500);
+
     return (
         <div className="container">
             <section className="intro">
                 <span className="left">
-                    <img src={avatar} alt="Profile" width="" />
+                    <img src={avatar} alt="Profile" />
                 </span>
                 <span className="right">
                     <span className="text-wrapper">
@@ -71,6 +77,16 @@ export default function Index() {
                         <SocialLinks />
                     </span>
                 </span>
+                {showClickme && (
+                    <img
+                        id="clickme"
+                        src={clickMe}
+                        alt="hint to click at arrow down button"
+                    />
+                )}
+                <button id="github" onClick={() => toNextId("fake-final")}>
+                    Visit site's repo
+                </button>
                 <button id="down-arrow" onClick={() => toNextId("about-me")}>
                     <img
                         src={downArrow}
@@ -81,8 +97,12 @@ export default function Index() {
             </section>
             <section id="about-me">
                 <h3>My details</h3>
-                <PersonalDetails details={myDetails} />
-                <button id="down-arrow" onClick={() => toNextId("techstack")}>
+                <PersonalDetails />
+
+                <button
+                    id="down-arrow"
+                    onClick={() => toNextId("my-techstack")}
+                >
                     <img
                         src={downArrow}
                         alt="move to next section"
@@ -90,15 +110,15 @@ export default function Index() {
                     />
                 </button>
             </section>
-            <section id="techstack" className="my-techstack">
+            <section id="my-techstack">
                 <h3>What I've had prior experience with</h3>
-                <span className="techstack">
+                <section id="techstack">
                     {myTechStack.map((img) => (
                         <a key={img.href} href={img.href} className="icon">
                             <img alt={img.alt} src={img.src} height="80" />
                         </a>
                     ))}
-                </span>
+                </section>
                 <button
                     id="down-arrow"
                     onClick={() => toNextId("techstack-revisit")}
@@ -110,6 +130,7 @@ export default function Index() {
                     />
                 </button>
             </section>
+
             {techstackScrolled ? (
                 <section id="techstack-revisit" className="techstack-scrolled">
                     <span className="firework-wrapper">
@@ -121,6 +142,7 @@ export default function Index() {
                         <div className="firework"></div>
                     </span>
                     <h3>You scrolled on the tech stack list. Nice try!</h3>
+
                     <button
                         id="down-arrow"
                         onClick={() => toNextId("fake-final")}
@@ -137,19 +159,22 @@ export default function Index() {
                     id="techstack-revisit"
                     className="techstack-not-scrolled"
                 >
-                    <button id="up-arrow" onClick={() => toNextId("techstack")}>
-                        <img
-                            src={downArrow}
-                            alt="move to next section"
-                            width="40"
-                        />
-                    </button>
-                    <>
-                        <h3>
-                            Not enough techs? Try scrolling on the tech stack
-                            list and let the magic happens.
-                        </h3>
-                    </>
+                    <HideDuring inverse>
+                        <button
+                            id="up-arrow"
+                            onClick={() => toNextId("my-techstack")}
+                        >
+                            <img
+                                src={downArrow}
+                                alt="move to next section"
+                                width="40"
+                            />
+                        </button>
+                    </HideDuring>
+                    <h3>
+                        Not enough techs? Try scrolling on the tech stack list
+                        and let the magic happens.
+                    </h3>
                 </section>
             )}
             <section id="fake-final" className="final">
@@ -168,8 +193,8 @@ export default function Index() {
                     </h3>
                 </div>
                 <h3 className="to-repo">
-                    <a href="https://github.com/TomPham204/portfolio">
-                        Visit Github repo
+                    <a href="https://github.com/TomPham204/portfolio-public">
+                        Visit site's repo
                     </a>
                 </h3>
                 <button id="down-arrow" onClick={() => toNextId("final")}>
@@ -187,8 +212,8 @@ export default function Index() {
                 <h3>
                     <Link to="/my-story" className="end-link">
                         To Story
-                    </Link>
-                    or
+                    </Link>{" "}
+                    or{" "}
                     <Link to="/projects" className="end-link">
                         To Projects
                     </Link>
@@ -198,63 +223,6 @@ export default function Index() {
     );
 }
 
-const myDetails: Details = [
-    {
-        label: "English Name",
-        values: ["Tom Pham"],
-    },
-    {
-        label: "Vietnamese Name",
-        values: ["Phạm Công Tuấn"],
-    },
-    {
-        label: "Alias",
-        values: ["TomX", "TomX204", "The C4T"],
-    },
-    {
-        label: "Age",
-        values: ["I'm in my twenties"],
-    },
-    {
-        label: "Gender",
-        values: ["Male"],
-    },
-    {
-        label: "Occupation",
-        values: ["Front-end Developer"],
-    },
-    {
-        label: "Skills",
-        values: [
-            "Front end",
-            "Design",
-            "Photo-Video-Audio editing",
-            "Planning",
-        ],
-    },
-    {
-        label: "Pastimes",
-        values: [
-            "Playing video games",
-            "Studying something new",
-            "Working on a personal project",
-        ],
-    },
-    {
-        label: "Favorite food",
-        values: ["Pho/Phở", "Ice-cream"],
-    },
-    {
-        label: "Favorite quote",
-        values: [
-            '"The way to get started is to quit talking and begin doing" - Walt Disney',
-        ],
-    },
-    {
-        label: "Relationship",
-        values: ["Currently crush a girl with firstname beginning with T"],
-    },
-];
 const myTechStack = [
     {
         src: html,
