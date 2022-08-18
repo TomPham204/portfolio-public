@@ -1,4 +1,4 @@
-# This is a public ver of my private portfolio repo. Personal images/sound resources are not included. All code files stay the same.
+# This is a public ver of my private portfolio repo. Personal images/sound resources are not included. All code files stay the same. Link to product: https://tompham-portfolio.vercel.app
 
 - [Remix Docs](https://remix.run/docs)
 
