@@ -192,7 +192,7 @@ export default function Index() {
             </div>
             <div id="beginning-content-3">
                 <span className="center">
-                    <p>Which form of art, you ask?</p>
+                    <p>Which form of art, you may ask?</p>
                     <p>Anything that is beautiful and harmonious.</p>
                 </span>
                 <button id="down-arrow" onClick={() => toNextId(3)}>
@@ -207,11 +207,10 @@ export default function Index() {
                 <span>
                     <span className="to-left">
                         <p>In any form.</p>
-                        <p>Music. Photo. Video.</p>
+                        <p>Music. Photos. Videos.</p>
                     </span>
                     <img src={story3} alt="story images" />
                 </span>
-
                 <button id="down-arrow" onClick={() => toNextId(4)}>
                     <img
                         src={downArrow}
@@ -233,9 +232,9 @@ export default function Index() {
             <div id="and-content-1">
                 <span>
                     <span className="to-left">
-                        <p>During my upbringing,</p>
-                        <p>I also quickly grew fond of computers.</p>
-                        <p>I mean, technology in general.</p>
+                        <p>During my upbringing, I also</p>
+                        <p>quickly grew fond of computers.</p>
+                        <p>"Technology" as a whole.</p>
                     </span>
                     <img src={story4} alt="story images" />
                 </span>
@@ -251,7 +250,7 @@ export default function Index() {
             <div id="and-content-2">
                 <span className="center">
                     <p>Art + Technology = ???</p>
-                    <p>Maybe, a beautiful product like this page?</p>
+                    <p>Maybe... a beautiful product like this page?</p>
                 </span>
                 <button id="down-arrow" onClick={() => toNextId(7)}>
                     <img
@@ -263,7 +262,7 @@ export default function Index() {
             </div>
             <div id="after-that">
                 <span className="center">
-                    <p>Anyway, a long time pass...</p>
+                    <p>Anyway, a long time has passed.</p>
                 </span>
                 <button id="down-arrow" onClick={() => toNextId(8)}>
                     <img
@@ -276,9 +275,9 @@ export default function Index() {
             <div id="after-that-content-1">
                 <span>
                     <span className="to-left">
-                        <p>I'm now in high school.</p>
-                        <p>Wondering about my</p>
-                        <p>future occupation.</p>
+                        <p>During high school,</p>
+                        <p>I often wondered about</p>
+                        <p>my future occupation.</p>
                     </span>
                     <img src={story5} alt="story images" />
                 </span>
@@ -293,8 +292,9 @@ export default function Index() {
             </div>
             <div id="after-that-content-2">
                 <span className="center">
-                    <p>Ok, IT sounds good enough.</p>
-                    <p>By the way...</p>
+                    <p>In the end, I made up my mind.</p>
+                    <p>"OK, IT suits me better."</p>
+                    <p>So far, it's still true. I'm glad.</p>
                 </span>
                 <button id="down-arrow" onClick={() => toNextId(10)}>
                     <img
@@ -305,16 +305,7 @@ export default function Index() {
                 </button>
             </div>
             <div id="after-that-content-3">
-                <span>
-                    <img src={story6} alt="story images" />
-                    <span className="to-right">
-                        <p>...since high school till now,</p>
-                        <p>I've worked on many personal projects.</p>
-                        <p>Mostly with Photoshop, Premiere</p>
-                        <p>and Corel VideoStudio.</p>
-                    </span>
-                </span>
-
+                <h1>How about art?</h1>
                 <button id="down-arrow" onClick={() => toNextId(11)}>
                     <img
                         src={downArrow}
@@ -325,11 +316,11 @@ export default function Index() {
             </div>
             <div id="after-that-content-4">
                 <span>
-                    <img src={story7} alt="story images" />
+                    <img src={story6} alt="story images" />
                     <span className="to-right">
-                        <p>In 2017, I made an</p>
-                        <p>Osu! skin called Slim-eX</p>
-                        <p>featuring glass-like components.</p>
+                        <p>I've worked on many projects.</p>
+                        <p>Mostly personal, using Photoshop,</p>
+                        <p>Premiere and Corel VideoStudio.</p>
                     </span>
                 </span>
                 <button id="down-arrow" onClick={() => toNextId(12)}>
@@ -340,10 +331,26 @@ export default function Index() {
                     />
                 </button>
             </div>
-            <div id="ending">
-                <h1>Starting to feel a bit boring? </h1>
-                <h1 id="nope">Almost at the end? Not yet.</h1>
+            <div id="after-that-content-5">
+                <span>
+                    <img src={story7} alt="story images" />
+                    <span className="to-right">
+                        <p>In 2017, I made an Osu!</p>
+                        <p>skin called Slim-eX featuring</p>
+                        <p>glass-like components.</p>
+                    </span>
+                </span>
                 <button id="down-arrow" onClick={() => toNextId(13)}>
+                    <img
+                        src={downArrow}
+                        alt="move to next section"
+                        width="40"
+                    />
+                </button>
+            </div>
+            <div id="ending">
+                <h1 id="nope">Oh, right. The end?</h1>
+                <button id="down-arrow" onClick={() => toNextId(14)}>
                     <img
                         src={downArrow}
                         alt="move to next section"
@@ -354,12 +361,12 @@ export default function Index() {
             <div id="next-content-1">
                 <span className="center">
                     <p>Currently, I'm a final-year student</p>
-                    <p>looking for a front-end fresher position.</p>
+                    <p>looking for a front-end fresher opportunity.</p>
                     <p>"An online portfolio must be good" - I thought.</p>
                 </span>
                 <button
                     id="down-arrow"
-                    onClick={() => (toNextId(14), changeSong(music1))}
+                    onClick={() => (toNextId(15), changeSong(music1))}
                 >
                     <img
                         src={downArrow}
@@ -370,10 +377,10 @@ export default function Index() {
             </div>
             <div id="next-content-2">
                 <span className="center">
-                    <p>and that, my friend, is the story</p>
+                    <p>...and that, my friend, is the story</p>
                     <p>of how this website was born.</p>
                 </span>
-                <button id="down-arrow" onClick={() => toNextId(15)}>
+                <button id="down-arrow" onClick={() => toNextId(16)}>
                     <img
                         src={downArrow}
                         alt="move to next section"
@@ -390,7 +397,7 @@ export default function Index() {
                     <img src={story8} alt="blank" />
                 </span>
 
-                <button id="down-arrow" onClick={() => toNextId(16)}>
+                <button id="down-arrow" onClick={() => toNextId(17)}>
                     <img
                         src={downArrow}
                         alt="move to next section"
@@ -402,7 +409,7 @@ export default function Index() {
                 <span className="center">
                     <p>"Good things take time"</p>
                 </span>
-                <button id="down-arrow" onClick={() => toNextId(17)}>
+                <button id="down-arrow" onClick={() => toNextId(18)}>
                     <img
                         src={downArrow}
                         alt="move to next section"
@@ -418,7 +425,7 @@ export default function Index() {
                 </span>
                 <button
                     id="down-arrow"
-                    onClick={() => (toNextId(18), changeSong(music1))}
+                    onClick={() => (toNextId(19), changeSong(music1))}
                 >
                     <img
                         src={downArrow}
@@ -429,7 +436,7 @@ export default function Index() {
             </div>
             <div id="new-journey">
                 <h1>My tributes</h1>
-                <button id="down-arrow" onClick={() => toNextId(19)}>
+                <button id="down-arrow" onClick={() => toNextId(20)}>
                     <img
                         src={downArrow}
                         alt="move to next section"
@@ -446,7 +453,7 @@ export default function Index() {
                     <img src={story10} alt="story images" />
                 </span>
 
-                <button id="down-arrow" onClick={() => toNextId(20)}>
+                <button id="down-arrow" onClick={() => toNextId(22)}>
                     <img
                         src={downArrow}
                         alt="move to next section"
@@ -454,7 +461,7 @@ export default function Index() {
                     />
                 </button>
             </div>
-            <div id="new-journey-content-2">
+            {/* <div id="new-journey-content-2">
                 <span>
                     <span className="crush">
                         {showCrush ? (
@@ -480,7 +487,7 @@ export default function Index() {
                         width="40"
                     />
                 </button>
-            </div>
+            </div> */}
             <div id="new-journey-content-3">
                 <span>
                     <span className="to-left">
@@ -489,7 +496,7 @@ export default function Index() {
                     <img src={story12} alt="story images" />
                 </span>
 
-                <button id="down-arrow" onClick={() => toNextId(22)}>
+                <button id="down-arrow" onClick={() => toNextId(23)}>
                     <img
                         src={downArrow}
                         alt="move to next section"
@@ -507,7 +514,7 @@ export default function Index() {
                     </span>
                 </span>
 
-                <button id="down-arrow" onClick={() => toNextId(23)}>
+                <button id="down-arrow" onClick={() => toNextId(24)}>
                     <img
                         src={downArrow}
                         alt="move to next section"
@@ -522,7 +529,7 @@ export default function Index() {
                     <p>Contact me at</p>
                     <SocialLinks />
                 </span>
-                <button id="down-arrow" onClick={() => toNextId(24)}>
+                <button id="down-arrow" onClick={() => toNextId(25)}>
                     <img
                         src={downArrow}
                         alt="move to next section"
@@ -531,7 +538,7 @@ export default function Index() {
                 </button>
             </div>
             <div id="the-end">
-                <h1>Thank you for reading</h1>
+                <h1>Thank you for reading.</h1>
                 <Link id="to-homepage" to="/">
                     To Home
                 </Link>
@@ -554,6 +561,7 @@ const ids = [
     "after-that-content-2",
     "after-that-content-3",
     "after-that-content-4",
+    "after-that-content-5",
     "ending",
     "next-content-1",
     "next-content-2",

@@ -98,7 +98,6 @@ export default function Index() {
             <section id="about-me">
                 <h3>My details</h3>
                 <PersonalDetails />
-
                 <button
                     id="down-arrow"
                     onClick={() => toNextId("my-techstack")}
