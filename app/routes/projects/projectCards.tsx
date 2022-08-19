@@ -6,7 +6,9 @@ import styles from "app/styles/projects.css";
 import spiritlabsCert from "app/components/projects/spiritlabs-cert.png";
 import discordSticker from "app/components/projects/discord-stickers.png";
 import discordEmoji from "app/components/projects/discord-emojis.png";
-import livewallpaper from "app/components/projects/wallpaper.mp4";
+import livewallpaper1 from "app/components/projects/wallpaper1.mp4";
+import livewallpaper2 from "app/components/projects/wallpaper2.mp4";
+import livewallpaper3 from "app/components/projects/wallpaper3.mp4";
 import slimex from "app/components/projects/slimex-glass-effect.png";
 
 export function links() {
@@ -76,7 +78,24 @@ const projects = [
     { url: slimex, type: "image", title: "Osu! skin: Slim-eX", order: 2 },
     { url: discordSticker, type: "image", title: "Discord Stickers", order: 1 },
     { url: discordEmoji, type: "image", title: "Discord Emojis", order: 2 },
-    { url: livewallpaper, type: "video", title: "Live Wallpaper", order: 1 },
+    {
+        url: livewallpaper1,
+        type: "video",
+        title: "Live Wallpaper #1",
+        order: 1,
+    },
+    {
+        url: livewallpaper2,
+        type: "video",
+        title: "Live Wallpaper #2",
+        order: 2,
+    },
+    {
+        url: livewallpaper3,
+        type: "video",
+        title: "Live Wallpaper #3",
+        order: 1,
+    },
 ];
 
 export default Cards;

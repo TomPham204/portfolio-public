@@ -54,8 +54,8 @@ export default function Index() {
                 onClick={() => setCurrentContent(!currentContent)}
             >
                 {currentContent
-                    ? "Change to project's notes"
-                    : "Change to featured works"}
+                    ? "Toggle projects' notes"
+                    : "Toggle featured works"}
             </button>
             {currentContent ? (
                 <span className="details">
@@ -73,8 +73,8 @@ export default function Index() {
                 )}
             >
                 {currentContent
-                    ? "Change to project's notes"
-                    : "Change to featured works"}
+                    ? "View my projects' notes"
+                    : "View my featured works"}
             </button>
             <span className="verify">
                 <h3>
