@@ -205,8 +205,8 @@ export default function Index() {
                 </button>
             </section>
             <section id="final" className="final">
-                <h3>Ok, this is the real end of the homepage</h3>
-                <h3>I hope you had a good time</h3>
+                <h3>Ok, this is the real end of the homepage.</h3>
+                <h3>I hope you had a good time.</h3>
                 <h3>Want to experience more?</h3>
                 <h3>
                     <Link to="/my-story" className="end-link">
@@ -231,12 +231,12 @@ const myTechStack = [
     {
         src: css,
         alt: "CSS",
-        href: "https://en.wikipedia.org/wiki/CSS",
+        href: "https://developer.mozilla.org/en-US/docs/Web/CSS",
     },
     {
         src: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/150px-Unofficial_JavaScript_logo_2.svg.png",
         alt: "JavaScript",
-        href: "https://en.wikipedia.org/wiki/JavaScript",
+        href: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
     },
     {
         src: "https://user-images.githubusercontent.com/1500684/157773063-20a0ed64-b9f8-4e0b-9d1e-0b65a3d4a6db.svg",
