@@ -4,24 +4,23 @@ export function links() {
     return [{ rel: "stylesheet", href: styles }];
 }
 
-export default function PersonalDetails({ details }: { details: Details }) {
+export default function PersonalDetails() {
     return (
         <span className="details-wrapper">
             <div className="border-effect">
                 <table>
                     <tr>
-                        <td className="label">English Name</td>
+                        <td className="label">English name</td>
                         <td className="value">Tom Pham</td>
                     </tr>
                     <tr>
-                        <td className="label">Vietnamese Name</td>
+                        <td className="label">Vietnamese name</td>
                         <td className="value">Phạm Công Tuấn</td>
                     </tr>
                     <tr>
-                        <td className="label">Alias</td>
+                        <td className="label">Nicknames</td>
                         <td className="value">
                             <span className="down">
-                                <div>TomX</div>
                                 <div>TomX204</div>
                                 <div>The C4T</div>
                             </span>
@@ -29,28 +28,20 @@ export default function PersonalDetails({ details }: { details: Details }) {
                     </tr>
                     <tr>
                         <td className="label">Age</td>
-                        <td className="value">I'm in my twenties</td>
-                    </tr>
-                    <tr>
-                        <td className="label">Religion</td>
-                        <td className="value">Christian</td>
-                    </tr>
-                    <tr>
-                        <td className="label">Gender</td>
-                        <td className="value">Male</td>
+                        <td className="value">20s</td>
                     </tr>
                     <tr>
                         <td className="label">Occupation</td>
                         <td className="value">Front-end Developer</td>
                     </tr>
                     <tr>
-                        <td className="label">Skills</td>
+                        <td className="label">Featured skills</td>
                         <td className="value">
                             <span className="down">
-                                <div>Web development - Front end</div>
-                                <div>Design</div>
+                                <div>Web - Front end</div>
+                                <div>Designing</div>
                                 <div>Photo-video-audio editing</div>
-                                <div>Making plans</div>
+                                <div>Planning</div>
                             </span>
                         </td>
                     </tr>
@@ -80,13 +71,13 @@ export default function PersonalDetails({ details }: { details: Details }) {
                             doing" - Walt Disney
                         </td>
                     </tr>
-                    <tr>
+                    {/* <tr>
                         <td className="label">Girlfriend</td>
                         <td className="value">
-                            Currently have a crush on a girl with firstname
+                            Currently having a crush on a girl with firstname
                             beginning with "T"
                         </td>
-                    </tr>
+                    </tr> */}
                     <tr>
                         <td className="label">Life events</td>
                         <td className="value">
