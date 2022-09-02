@@ -12,6 +12,7 @@ import project9 from "app/components/projects/project9.png";
 import project10 from "app/components/projects/project10.png";
 import project11 from "app/components/projects/project11.png";
 import project12 from "app/components/projects/project12.png";
+import project13 from "app/components/projects/project13.png";
 
 export function links() {
   return [{ rel: "stylesheet", href: styles }];
@@ -38,6 +39,7 @@ const projects = [
   { url: project8, title: "AIP-BDET" },
   { url: project9, title: "Yggdrasil's Google sheet" },
   { url: project10, title: "Yggdrasil's OCR script" },
+  { url: project13, title: "Learning for Everyone" },
 ];
 
 export default Notes;
